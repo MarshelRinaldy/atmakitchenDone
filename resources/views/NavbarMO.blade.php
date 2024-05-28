@@ -7,16 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar With Bootstrap</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
+    {{-- berikut merupakan link tambahan --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/2.0.7/css/dataTables.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css" rel="stylesheet" />
+    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    {{-- bootstrap --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
-
 
 </head>
 
@@ -238,7 +248,23 @@
                             <a href="{{ route('show_pengiriman') }}" class="sidebar-link">Pengiriman</a>
                         </li> --}}
                         <li class="sidebar-item">
-                            <a href="{{ route('mo.pesanan') }}" class="sidebar-link">Konfirmasi Pesanan</a>
+                            <a href="{{ route('mo.show_konfirmasi_pesanan') }}" class="sidebar-link">Konfirmasi
+                                Pesanan</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#transaksi" aria-expanded="false" aria-controls="transaksi">
+                        <i class="lni lni-agenda"></i>
+                        <span>Presensi</span>
+                    </a>
+                    <ul id="transaksi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ route('mo.presensi') }}" class="sidebar-link">Presensi & Gaji Pegawai</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('mo.presensi.rekap') }}" class="sidebar-link">Rekap Gaji Bulanan</a>
                         </li>
                     </ul>
                 </li>
@@ -250,10 +276,26 @@
                     </a>
                     <ul id="transaksi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                         <li class="sidebar-item">
-                            <a href="{{ route('mo.laporan.penjualan') }}" class="sidebar-link">Penjualan Bulanan</a>
+                            <a href="{{ route('mo.laporan.pemasukan') }}" class="sidebar-link">Laporan Pemasukan</a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{ route('mo.laporan.stok_bb') }}" class="sidebar-link">Stok Bahan Baku</a>
+                            <a href="{{ route('mo.laporan.pengeluaran') }}" class="sidebar-link">Laporan
+                                Pengeluaran</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#transaksi" aria-expanded="false" aria-controls="transaksi">
+                        <i class="lni lni-agenda"></i>
+                        <span>Penitip</span>
+                    </a>
+                    <ul id="transaksi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="{{ route('penitip.index') }}" class="sidebar-link">Data Penitip</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('penitip.rekap') }}" class="sidebar-link">Laporan Rekap Penitip</a>
                         </li>
                     </ul>
                 </li>
@@ -344,6 +386,9 @@
         </div>
     </d>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
     <script src="script.js"></script>
     <script>
         const hamBurger = document.querySelector(".toggle-btn");
